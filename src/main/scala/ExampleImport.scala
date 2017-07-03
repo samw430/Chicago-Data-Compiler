@@ -6,7 +6,7 @@ import java.io._
 
 object ExampleImport {
 
-  def sqr(x : Int) = x * x
+  def sqr(x : Int): Int = x * x
 
   def main(args: Array[String]) = {
     val value = 3

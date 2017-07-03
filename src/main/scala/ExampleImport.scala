@@ -6,13 +6,22 @@ import java.io._
 
 object ExampleImport {
 
-  val settings = new CsvParserSettings()
-  val parser = new CsvParser( settings )
+  def sqr(x : Int) = x * x
 
-  println( "Enter File Directory for CSV to be read" )
-  val input = scala.io.StdIn.readLine()
+  def main(args: Array[String]) = {
+    val value = 3
 
-  val parsedCsv = parser.parseAll( new InputStreamReader(java.lang.System.in) )
-  print( parsedCsv )
+    println(s"The square of " + value + " is " + sqr(value))
 
+    println(s"The square of $value is ${sqr(value)}")
+
+    val settings = new CsvParserSettings()
+    val parser = new CsvParser( settings )
+
+    println( "Enter File Directory for CSV to be read" )
+    val input = scala.io.StdIn.readLine()
+
+    val parsedCsv = parser.parseAll( new InputStreamReader(java.lang.System.in) )
+    print( parsedCsv )
+  }
 }
